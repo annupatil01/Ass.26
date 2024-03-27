@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+    <style>
+        body{
+            background-color: #85FFBD;
+            background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+            min-height: 100vh;
+
+        }
+        .Vehicle-container{
+           background-color: white; 
+           width: 500px;
+           margin:10px auto;
+           display: flex;
+           justify-content: center;
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 0 10px black;
+        }
+        .app-title{
+            text-align: center;
+        }
+        .vehicle-img{
+            height: 50px;
+        }
+        .btn-container{
+            display:flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .btn-toggle{
+            font-size: 20px;
+            padding: 5px 20px;
+            border-radius: 40px;
+            border: none;
+            margin: 0 10px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+        .btn-toggle:hover{
+            box-shadow: 0 0 10px black;
+        }
+    
+        @media screen and (max-width: 600px){
+            .Bulb-container{
+                width: 80%;
+            }
+            .bubl-img{
+                height: 150px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <h1 class="app-title">Vehicles Toggle</h1>
+   <div class="Vehicle-container">
+    <img src="./img/bycicle.png" class="Vehicle-img" id="Vehicle">
+
+   </div>
+   <div class="btn-container">
+    <button class="btn-toggle" onclick="toggleVehicle('bycicle')">Bycicle</button>
+    <button class="btn-toggle" onclick="toggleVehicle('car')">Car</button>
+    <button class="btn-toggle" onclick="toggleVehicle('bus')">Bus</button>
+
+   </div>
+   <script>
+    function toggleVehicle(state){
+       const VehicleElement = document.getElementById("Vehicle");
+       if(state =='bycicle'){
+             VehicleElement.src = './img/bycicle.png';
+       }
+       else if(state =='car'){
+             VehicleElement.src = './img/car.png';
+       }
+       else if(state == 'bus'){
+             VehicleElement.src ='./img/bus.png';
+       }
+    }
+   </script>
+</body>
+</html>
